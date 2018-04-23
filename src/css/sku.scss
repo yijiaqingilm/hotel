@@ -1,0 +1,46 @@
+@import "./globalFunc";
+// sku.css
+
+
+.sku_detail {
+  background-color: #fff;
+  > div {
+    padding: 5px 15px; /*no*/
+    margin-bottom: 5px; /*no*/
+  }
+}
+
+.tagcontainer {
+  padding: 10px 15px; /*no*/
+  span {
+    background-color: #fff;
+    border-radius: 2px; /*no*/
+    padding: 5px 8px; /*no*/
+    margin-right: 5px; /*no*/
+  }
+}
+
+.detailcontainer {
+  .header {
+    background-color: #4cd964;
+    padding: 8px 15px; /*no*/
+    color: #fff;
+    font-weight: 500;
+    @include setFontSize($middleFontSize)
+  }
+}
+
+.remarkcontainer {
+  position: relative;
+  .price {
+    color: #ff9800;
+    @include setFontSize($middleFontSize)
+  }
+  .unit {
+    position: absolute;
+    top: 50%;
+    font-size: 90%;
+    color: #727272;
+    right: 15px; /*no*/
+  }
+}

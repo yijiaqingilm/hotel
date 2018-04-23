@@ -1,0 +1,25 @@
+@import "globalFunc";
+
+.price {
+  strong {
+    color: #ff9800;
+    padding-right: 3px; /*no*/
+  }
+}
+
+.total {
+  text-align: right;
+}
+
+.cart-list {
+  .item-title {
+    max-width: 50%;
+  }
+}
+
+.cartprice {
+  text-align: right;
+  strong {
+    color: #ff9800;
+  }
+}

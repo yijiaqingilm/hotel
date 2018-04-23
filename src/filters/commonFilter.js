@@ -1,0 +1,28 @@
+import Vue from 'vue'
+import moment from 'lib/moment'
+import 'lib/moment/locale/zh-cn'
+
+moment.locale('zh-cn')
+Vue.filter('uppercase', function (value) {
+  if (!value) {
+    return ''
+  }
+  value = value.toString()
+  return value.charAt(0).toUpperCase() + value.slice(1)
+})
+let defaultNum = 2
+Vue.filter('toFixed', function (value, num = defaultNum) {
+  if (!value) {
+    return value
+  }
+  return Number(value).toFixed(num)
+})
+
+Vue.filter('dateFormat', function (value, format = 'YYYY-MM-DD HH:mm:ss') {
+  /* if (!Number(value)) {
+    return value
+  }*/
+  return moment(value).format(format)
+})
+
+

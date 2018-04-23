@@ -1,0 +1,14 @@
+@import "globalFunc";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  @include setFontSize($middleFontSize);
+  color: $theme_color;
+  font-weight: bold;
+  margin: 5px 15px 0; /*no*/
+  .more {
+    color: $gray_color;
+    @include setFontSize($baseFontSize)
+  }
+}
