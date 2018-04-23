@@ -31,21 +31,15 @@ Vue.use(Framework7Vue)
 
 import back from 'components/back/back.vue'
 import mask from 'components/masking/masking.vue'
-import myRadio from 'components/myRadio/myRadio.vue'
-import myCheckbox from 'components/myCheckbox/myCheckbox.vue'
 import ErrPanel from 'components/errorPanel/errorPanel'
-import CartIcon from 'components/cartIcon/CartIcon'
 import Preloader from 'components/preloader/Preloader'
+import IIcon from 'components/iicon/IIcon'
 
 Vue.component('back', back)
 Vue.component('masking', mask)
-Vue.component('myRadio', myRadio)
-Vue.component('myCheckbox', myCheckbox)
 Vue.component('errPanel', ErrPanel)
-Vue.component('cartIcon', CartIcon)
 Vue.component('preloader', Preloader)
-import { getMediaUrl } from 'lib/common'
-
+Vue.component('IIcon', IIcon)
 let user_store = sessionStorage.getItem('user_store')
 user_store && store.replaceState(Object.assign(store.state, JSON.parse(user_store)))
 // Init App

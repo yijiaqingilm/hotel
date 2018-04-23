@@ -1,14 +1,18 @@
 @import "../../css/globalFunc";
 
 .price {
-  color: #ff9800;
+  color: $theme_color;
 }
 
-.vipprice {
-  color: #980000;
-}
 
-.content {
-  display: flex;
-  justify-content: space-between;
+.g-goods {
+  position: relative;
+  img {
+    width: 100%;
+  }
+  .tags {
+    position: absolute;
+    bottom: 15px;
+    left: 10px;
+  }
 }

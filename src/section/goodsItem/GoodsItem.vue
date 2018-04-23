@@ -1,40 +1,38 @@
 <template>
-    <section @click="skuDetail(skus)">
+    <section @click="detail(goods)">
         <f7-card>
-            <f7-card-content>
-                <div>
-                    <img :src="mediaUrl(skus.id)" class="goods_img" alt="">
+            <f7-card-content class="g-goods" :inner="false">
+                <img src="https://dimg04.c-ctrip.com/images/2B0f0g00000086i5h406E_R_750_560_Q80.jpg_.webp" alt="">
+                <div class='tags'>
+                    <f7-badge color="red">xxx</f7-badge>
+                    <f7-badge color="red">yyy</f7-badge>
                 </div>
-                <div>{{skus.name}}</div>
-                <div>原价：<strike>¥{{skus.originalPrice | toFixed}}</strike></div>
-                <div class="content">
-                    <div class="price">现价：¥{{skus.price | toFixed}}</div>
-                    <div class="unit">/{{skus.unit}}</div>
-                </div>
-                <div class="vipprice">VIP价：¥{{skus.vipprice | toFixed}}</div>
             </f7-card-content>
+            <f7-card-footer>
+                <div>
+                    <div class='g-title'>
+                        <i class="icon">此处可添加标签</i>
+                        商品标商品标商品标商品标商品标商品标商品标商品标
+                    </div>
+                    <div><span>商品信息1</span><span>商品信息2</span></div>
+                </div>
+                <div><span class='price'>¥201</span>起</div>
+            </f7-card-footer>
         </f7-card>
     </section>
 </template>
 
 <script type="text/ecmascript-6">
-  import { getMediaUrl } from 'lib/common'
-
   export default {
-    props: {
-      skus: Object
-    },
+    props: {goods: {}},
     data () {
       return {}
     },
     created () {
     },
     methods: {
-      mediaUrl (id) {
-        return `${getMediaUrl()}sku_main_${id}_0.jpg`
-      },
-      skuDetail (skus) {
-        this.$router.loadPage(`/catalog/sku/${skus.id}`)
+      detail (goods) {
+        this.$router.loadPage(`/hotel/${goods.id}`)
       }
     },
   }
