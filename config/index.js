@@ -23,17 +23,17 @@ module.exports = {
   },
   dev: {
     env: require('./dev.env'),
-    port: 3001,
+    port: 3003,
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '',
     proxyTable: {
       // 测试服务器
-      '/api': {
-        /*测试环境地址*/
-        target: 'http://10.10.100.253:3006',
-        /* changeOrigin: true*/
-      },
+      /* '/api': {
+        /!*测试环境地址*!/
+        target: 'https://easy-mock.com/mock/590a8d127a878d73716eb900',
+        changeOrigin: true
+      },*/
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
@@ -43,7 +43,7 @@ module.exports = {
     cssSourceMap: true,
   },
   globals: {
-    serverUrl: debug ? JSON.stringify('http://127.0.0.1:3001/api') : JSON.stringify('https://dss.test.maiya.com/api'),
+    serverUrl: debug ? JSON.stringify('https://easy-mock.com/mock/590a8d127a878d73716eb900/example') : JSON.stringify('https://dss.test.maiya.com/api'),
     __DEBUG__: debug,
     payUrl: debug ? JSON.stringify('http://10.10.100.253:3006/view/pay/order') : JSON.stringify('https://dss.test.maiya.com/view/pay/order')
   }

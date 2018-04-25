@@ -48,5 +48,13 @@ export function getMediaUrl () {
 let handleJump = function (orderNo) {
   window.location.href = `${payUrl}?id=${orderNo}`
 }
+// string 格式为 yyyy-MM-dd hh:mm:ss
+let string2Date = (str) => {
+  let [year, month, day] = str.split(' ')[0].split('-')
+  return new Date(year, month - 1, day)
+}
 
-export { ActionManager, common, setToken, getToken, handleJump }
+export
+{
+  ActionManager, common, setToken, getToken, handleJump, string2Date
+}

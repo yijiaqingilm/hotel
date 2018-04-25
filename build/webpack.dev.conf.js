@@ -20,8 +20,6 @@ module.exports = merge(baseWebpackConfig, {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': config.dev.env,
-      /*__DEBUG__: true,
-      serverUrl: JSON.stringify('http://localhost:3001/api')*/
       ...config.globals
     }),
     // https://github.com/glenjamin/webpack-hot-middleware#installation--usage

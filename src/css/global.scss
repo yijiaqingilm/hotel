@@ -437,3 +437,48 @@ textarea {
 .i-badge {
   color: #000000;
 }
+
+.banner {
+  img {
+    width: 100%;
+  }
+}
+
+.media-list {
+  .item-media {
+    img {
+      width: 110px; /*no*/
+    }
+  }
+}
+
+.picker-calendar-day {
+  > div {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    @include setFontSize($baseFontSize);
+    i.rest {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 0.8em;
+    }
+  }
+  &.picker-calendar-day-selected {
+    background: $theme_color;
+    align-items: center !important;
+    color: white;
+    border-radius: 12px; /*no*/
+  }
+  &.picker-calendar-day-selectedPass {
+    background: #fff1e8;
+  }
+  &.picker-calendar-day-lease {
+    color: #d4d4d4;
+    cursor: auto;
+  }
+}

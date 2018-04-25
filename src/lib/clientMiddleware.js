@@ -1,4 +1,4 @@
-import { REQUEST, SUCCESS, FAILURE, ERROR_UNAUTHORIZED } from 'lib/const'
+import { PENDING, SUCCESS, FAILURE, ERROR_UNAUTHORIZED } from 'lib/const'
 import { app } from 'src/main.js'
 
 export default function clientMiddleware (client) {
@@ -10,7 +10,7 @@ export default function clientMiddleware (client) {
       return
     }
     const actionName = type
-    const [mutation_success, mutation_fail, mutation_request] = [`${actionName}_${SUCCESS.toLowerCase()}`, `${actionName}_${FAILURE.toLowerCase()}`, `${actionName}_${REQUEST.toLowerCase()}`]
+    const [mutation_success, mutation_fail, mutation_request] = [`${actionName}_${SUCCESS.toLowerCase()}`, `${actionName}_${FAILURE.toLowerCase()}`, `${actionName}_${PENDING.toLowerCase()}`]
     if (typeof action !== 'function') {
       alert('action 必须是一个函数!!!')
       return
@@ -22,7 +22,8 @@ export default function clientMiddleware (client) {
     }
     commit(mutation_request, rest)
     return new Promise((resolve, reject) => {
-      promise(client).then((result) => {
+      promise(client).then(({data}) => {
+        let result = data
         if (result.success) {
           commit(mutation_success, {
             data: result.data, refs: rest

@@ -1,7 +1,13 @@
 @import "globalFunc";
 
+.h-banner {
+  img {
+    width: 100%;
+  }
+}
+
 .h-header {
-  padding: 0 10px; /*no*/
+  padding: 10px 10px 0 10px; /*no*/
   @include setFontSize($middleFontSize);
   color: $theme_color;
   .h-title {
