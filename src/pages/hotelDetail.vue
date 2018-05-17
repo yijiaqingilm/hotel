@@ -119,7 +119,6 @@
             ottime,
             roomId: this.roomId
           }).then(({data}) => {
-            console.log(data, 'data')
             this.$router.loadPage('/book')
           })
 
